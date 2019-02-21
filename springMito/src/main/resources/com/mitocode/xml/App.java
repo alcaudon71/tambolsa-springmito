@@ -26,6 +26,7 @@ public class App {
 		Ciudad ciu = (Ciudad) appContext.getBean("ciudad");
 		
 		
+		// Impresiones 
 		System.out.println(per.getApodo());
 		System.out.println(ciu.getNombre());
 		
