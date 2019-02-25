@@ -3,11 +3,7 @@ package com.mitocode.beans;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
-// DisposableBean --> capturar eventos 
-public class Persona implements InitializingBean, DisposableBean {
+public class Persona_annotations {
 
 	private int id;
 	private String nombre;
@@ -16,7 +12,6 @@ public class Persona implements InitializingBean, DisposableBean {
 	private Ciudad ciudad;
 	
 
-	/* 
 	@PostConstruct
 	private void initBean() {
 		System.out.println("Antes de inicializar el bean - Persona");
@@ -26,7 +21,6 @@ public class Persona implements InitializingBean, DisposableBean {
 	private void destroyBean() {
 		System.out.println("Bean a punto de ser destruido - Persona");
 	}
-	*/ 
 
 	public Ciudad getCiudad() {
 		return ciudad;
@@ -71,18 +65,6 @@ public class Persona implements InitializingBean, DisposableBean {
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", nombre=" + nombre + ", apodo=" + apodo + "]";
-	}
-
-	// Construccion del Bean mediante Interface
-	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("AFTER PERSONA");
-	}
-
-	// Destruccion del Bean mediante Interface
-	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("DESTROY PERSONA");
 	}
 	
 	

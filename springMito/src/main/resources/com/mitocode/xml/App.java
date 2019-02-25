@@ -2,14 +2,12 @@ package com.mitocode.xml;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.mitocode.beans.AppConfig;
-import com.mitocode.beans.AppConfig2;
-import com.mitocode.beans.Ciudad;
-import com.mitocode.beans.Mundo;
-import com.mitocode.beans.Persona;
+import com.mitocode.beans.Barcelona;
+import com.mitocode.beans.Jugador;
+import com.mitocode.beans.Juventus;
+import com.mitocode.interfaces.IEquipo;
 
 public class App {
 
@@ -20,15 +18,19 @@ public class App {
 		// --------------------------------------------------
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/mitocode/xml/beans.xml");
 		
-		Persona per = appContext.getBean("persona", Persona.class);
-		//Persona per = (Persona) appContext.getBean("persona");
+		Jugador jug = appContext.getBean("messi", Jugador.class);
 		
-		Ciudad ciu = (Ciudad) appContext.getBean("ciudad");
+		Barcelona bar = appContext.getBean("barcelona", Barcelona.class);
+		Juventus juv = appContext.getBean("juventus", Juventus.class);
 		
+		IEquipo inter = appContext.getBean("juventus", IEquipo.class);
 		
-		// Impresiones 
-		System.out.println(per.getApodo());
-		System.out.println(ciu.getNombre());
+		//System.out.println(jug.getNombre() + " - " + jug.getEquipo().mostrar());
+		
+		System.out.println(bar.mostrar());
+		System.out.println(juv.mostrar());
+
+		System.out.println(inter.mostrar());
 		
 		
 		((ConfigurableApplicationContext) appContext).close();

@@ -4,7 +4,7 @@ public class Ciudad {
 
 	private String nombre;
 
-	
+	/*
 	private void initBean() {
 		System.out.println("Antes de inicializar el bean - Ciudad");
 	}
@@ -12,6 +12,7 @@ public class Ciudad {
 	private void destroyBean() {
 		System.out.println("Bean a punto de ser destruido - Ciudad");
 	}
+	*/
 	
 	
 	public String getNombre() {

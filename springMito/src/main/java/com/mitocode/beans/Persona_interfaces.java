@@ -7,7 +7,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 // DisposableBean --> capturar eventos 
-public class Persona implements InitializingBean, DisposableBean {
+public class Persona_interfaces implements InitializingBean, DisposableBean {
 
 	private int id;
 	private String nombre;
@@ -76,13 +76,13 @@ public class Persona implements InitializingBean, DisposableBean {
 	// Construccion del Bean mediante Interface
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("AFTER PERSONA");
+		System.out.println("Antes de inicializar el bean - Persona");
 	}
 
 	// Destruccion del Bean mediante Interface
 	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("DESTROY PERSONA");
+		System.out.println("Bean a punto de ser destruido - Persona");
 	}
 	
 	
