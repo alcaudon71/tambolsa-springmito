@@ -1,15 +1,21 @@
 package com.mitocode.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import com.mitocode.interfaces.IEquipo;
 
+@Component("messi")
 public class Jugador {
 
 	private int numero;
+	@Value("messi lionel")
 	private String nombre;
-	
-	
+	@Autowired
+	//@Qualifier("barcelonaQualifier")
 	private IEquipo equipo;
 	
 	public int getNumero() {
@@ -21,14 +27,14 @@ public class Jugador {
 	public String getNombre() {
 		return nombre;
 	}
-	@Required
+	//@Required
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	public IEquipo getEquipo() {
 		return equipo;
 	}
-	@Required
+	//@Required
 	public void setEquipo(IEquipo equipo) {
 		this.equipo = equipo;
 	}
